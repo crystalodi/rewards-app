@@ -45,5 +45,6 @@ html, body {
 .content {
   text-align: center;
   padding: 2.5em;
+  margin-bottom: 2.5em;
 }
 </style>
