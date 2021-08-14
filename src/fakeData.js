@@ -21,21 +21,21 @@ export const prizes = [
         quantity: 99
     },
     {
-        id: "3",
+        id: "4",
         name: "Macbook Pro",
         description: "A fancy slim laptop",
         image_url: "https://i.imgur.com/2aE6fmO.jpg",
         quantity: 99
     },
     {
-        id: "3",
+        id: "5",
         name: "Headphones",
         description: "Fancy and stylish noise cancelling headphones",
         image_url: "https://i.imgur.com/6dfg2fk.jpg",
         quantity: 99
     },
     {
-        id: "3",
+        id: "6",
         name: "Block of Gold",
         description: "A block of gold worth a lot of money",
         image_url: "https://i.imgur.com/8AWzqWA.jpg",
