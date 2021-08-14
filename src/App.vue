@@ -1,7 +1,7 @@
 <template>
   <Header/>
   <div class="content">
-    
+    <router-view></router-view>
   </div>
   <Footer/>
 </template>
@@ -27,5 +27,11 @@ html, body {
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2.5em;
 }
 </style>
