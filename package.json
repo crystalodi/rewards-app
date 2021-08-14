@@ -6,10 +6,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run serve\"",
     "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "serve-static": "^1.14.1",
@@ -22,8 +23,10 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "concurrently": "^6.2.1",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "nodemon": "^2.0.12"
   },
   "eslintConfig": {
     "root": true,
