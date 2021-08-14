@@ -1,14 +1,16 @@
 import {createWebHistory, createRouter} from "vue-router";
-import PrizeList from "./pages/PrizeList.vue";
-import PrizeDetail from "./pages/PrizeDetail.vue";
+import PrizeList from "../pages/PrizeList.vue";
+import PrizeDetail from "../pages/PrizeDetail.vue";
 
 const routes = [
     {
-        path: "/", 
+        path: "/",
+        name: "PrizeList",
         component: PrizeList
     },
     {
         path: "/prize/:id",
+        name: "PrizeDetail",
         component: PrizeDetail
     }
 ];
