@@ -1,6 +1,6 @@
 <template>
-    <p>Here is the full list of prizes that you can win.</p>
-    <div class="prizes-container" v-if="prizes">
+    <p class="text-center">Here is the full list of prizes that you can win.</p>
+    <div class="row" v-if="prizes">
         <PrizeCard v-for="prize of prizes" :key="prize.id" :prize="prize"/>
     </div>
 </template>
@@ -18,9 +18,3 @@ export default {
     },
 }
 </script>
-
-<style>
-    .prizes-container {
-        display: grid;
-    }
-</style>

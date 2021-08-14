@@ -1,7 +1,10 @@
 <template>
-    <div class="prize-card">
-        <div class="prize-card-container">
-            <h4>Win a {{prize.name}}</h4>
+    <div class="col-xl-4 col-md-2 col-12">
+        <div class="card prize-card">
+            <img class="card-img-top" v-bind:src="prize.image_url" v-if="prize.image_url"/>
+            <div class="card-body">
+                <div class="card-title">Win a {{prize.name}}</div>
+            </div>
         </div>
     </div>
 </template>
@@ -13,9 +16,12 @@ export default {
 }
 </script>
 <style>
-    /* .prize-card {
-        flex-grow: 1;
-    } */
+    image {
+        width: 100%;
+    }
+    .prize-card {
+        border: 0!important;
+    }
 </style>
 
 

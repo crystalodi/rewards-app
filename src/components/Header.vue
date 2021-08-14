@@ -12,7 +12,6 @@ export default {
 
 <style>
     .secondary-header {
-        padding: 3.75em;
         text-align: center;
         background: #0274bb;
         color: white;
