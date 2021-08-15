@@ -10,6 +10,7 @@
     "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi"
   },
   "dependencies": {
+    "@popperjs/core": "^2.9.3",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
     "core-js": "^3.6.5",
