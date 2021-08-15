@@ -14,7 +14,7 @@
                             {{prize.description}}
                             <p>Quantity: {{prize.quantity}}</p>
                         </div>
-                        <button class="app-button redeem-this me-1">Redeem This Prize</button>
+                        <button class="app-button redeem-this me-1" @click="updateQuantity()">Redeem This Prize</button>
                         <button class="app-button go-back" @click="goBackToPrizes()">Go Back To Prizes</button>
                     </div>
                 </div>
@@ -26,6 +26,7 @@
 export default {
     name: "PrizeDetail",
     props: ["prizes"],
+    emits: ["updatePrize"],
     methods: {
         redeemPrize() {
             // emit an event to go update selected prize quantity - 1.
@@ -37,6 +38,10 @@ export default {
             this.$router.push({
                 path: "/"
             });
+        },
+        updateQuantity() {
+            console.log("emit", this.$route.params.id);
+            this.$emit('updatePrize', this.$route.params.id);
         }
     },
     computed: {

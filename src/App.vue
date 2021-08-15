@@ -1,7 +1,7 @@
 <template>
   <Header/>
   <div class="container">
-    <router-view :prizes="prizes"></router-view>
+    <router-view :prizes="prizes" @updatePrize="updatePrize"></router-view>
   </div>
   <Footer/>
 </template>
@@ -15,7 +15,8 @@ export default {
   name: 'App',
   data() {
     return {
-      prizes: []
+      prizes: [],
+      showLightBox: false
     }
   },
   components: {
@@ -28,6 +29,14 @@ export default {
   methods: {
     getPrizes() {
       this.prizes = prizes;
+    },
+    updatePrize(prizeId) {
+      this.prizes.forEach(prize => {
+        if (prize.id === prizeId) {
+          prize.quantity = prize.quantity - 1;
+        }
+        // make call to close modal
+      })
     }
   },
 }
