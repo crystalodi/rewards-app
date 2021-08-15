@@ -15,8 +15,7 @@ export default {
   name: 'App',
   data() {
     return {
-      prizes: [],
-      showLightBox: false
+      prizes: []
     }
   },
   components: {
@@ -35,7 +34,6 @@ export default {
         if (prize.id === prizeId) {
           prize.quantity = prize.quantity - 1;
         }
-        // make call to close modal
       })
     }
   },

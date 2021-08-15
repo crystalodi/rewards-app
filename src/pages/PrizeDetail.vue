@@ -14,8 +14,8 @@
                             {{prize.description}}
                             <p>Quantity: {{prize.quantity}}</p>
                         </div>
-                        <button class="app-button redeem-this me-1" @click="confirmRedeemPrize()" :disabled="prize.quantity === 0">Redeem This Prize</button>
-                        <button class="app-button go-back" @click="goBackToPrizes()">Go Back To Prizes</button>
+                        <button class="app-button redeem-this me-1" @click="confirmRedeemPrize" :disabled="prize.quantity === 0">Redeem This Prize</button>
+                        <button class="app-button go-back" @click="goBackToPrizes">Go Back To Prizes</button>
                     </div>
                 </div>
             </div>
@@ -23,6 +23,7 @@
     </div>
 </template>
 <script>
+
 export default {
     name: "PrizeDetail",
     props: ["prizes"],
@@ -33,7 +34,7 @@ export default {
             this.$emit('updatePrizeQuantity', this.$route.params.id);
         },
         confirmRedeemPrize() {
-            // todo
+            
         },
         goBackToPrizes() {
             this.$router.push({
