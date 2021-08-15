@@ -1,4 +1,15 @@
 <template>
+    <LightBox ref="prizeLight">
+        <template v-slot:light-box-header>
+            <h5>Redeem Prize</h5>
+      </template>
+      <template v-slot:light-box-body>
+          <p>Are you sure you want to redeem {{prize.name}}?</p>
+      </template>
+            <template v-slot:light-box-footer>
+          <button @click="redeemPrize" type="button" class="btn">Yes, Redeem</button>
+      </template>
+    </LightBox>
     <div class="prize-detail-container">
         <div class="card app-card prize-card" v-if="prizeFound">
             <div class="row">
@@ -23,18 +34,22 @@
     </div>
 </template>
 <script>
-
+import LightBox from "../components/LightBox.vue";
 export default {
     name: "PrizeDetail",
     props: ["prizes"],
     emits: ["updatePrizeQuantity"],
+    components: {
+        LightBox
+    },
     methods: {
         redeemPrize() {
             console.log("emit", this.$route.params.id);
             this.$emit('updatePrizeQuantity', this.$route.params.id);
+            this.$refs.prizeLight.closeModal();
         },
         confirmRedeemPrize() {
-            
+            this.$refs.prizeLight.openModal()
         },
         goBackToPrizes() {
             this.$router.push({
@@ -60,15 +75,15 @@ export default {
         justify-content: center;
     }
     .redeem-this {
-        background-color:#ffce0a;
+        background-color:#ffce0a !important;
     }
     .redeem-this:hover {
         background-color: #ffd324;
     }
-    .go-back {
-        background-color:#0274bb;
-    }
     .go-back:hover {
+        background-color:#0274bb !important;
+    }
+    .go-back {
         background-color: #0da1fc;
     }
 </style>
