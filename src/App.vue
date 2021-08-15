@@ -1,7 +1,7 @@
 <template>
   <Header/>
   <div class="container">
-    <router-view :prizes="prizes" @updatePrize="updatePrize"></router-view>
+    <router-view :prizes="prizes" @updatePrizeQuantity="updatePrize"></router-view>
   </div>
   <Footer/>
 </template>

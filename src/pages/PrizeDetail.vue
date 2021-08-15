@@ -26,14 +26,14 @@
 export default {
     name: "PrizeDetail",
     props: ["prizes"],
-    emits: ["updatePrize"],
+    emits: ["updatePrizeQuantity"],
     methods: {
         redeemPrize() {
             console.log("emit", this.$route.params.id);
-            this.$emit('updatePrize', this.$route.params.id);
+            this.$emit('updatePrizeQuantity', this.$route.params.id);
         },
         confirmRedeemPrize() {
-            // show lightbox
+            // todo
         },
         goBackToPrizes() {
             this.$router.push({
