@@ -4,7 +4,7 @@
             <img class="card-img-top" v-bind:src="prize.image_url" v-if="prize.image_url"/>
             <div class="card-body text-center">
                 <div class="card-title mb-5">
-                    <b>Win a {{prize.name}}</b>
+                    <b>Win {{prize.name}}</b>
                 </div>
                 <button class="app-button redeem-button" @click="goToRedeem()">Redeem ></button>
             </div>

@@ -14,7 +14,7 @@
                             {{prize.description}}
                             <p>Quantity: {{prize.quantity}}</p>
                         </div>
-                        <button class="app-button redeem-this me-1" @click="updateQuantity()">Redeem This Prize</button>
+                        <button class="app-button redeem-this me-1" @click="confirmRedeemPrize()" :disabled="prize.quantity === 0">Redeem This Prize</button>
                         <button class="app-button go-back" @click="goBackToPrizes()">Go Back To Prizes</button>
                     </div>
                 </div>
@@ -29,7 +29,8 @@ export default {
     emits: ["updatePrize"],
     methods: {
         redeemPrize() {
-            // emit an event to go update selected prize quantity - 1.
+            console.log("emit", this.$route.params.id);
+            this.$emit('updatePrize', this.$route.params.id);
         },
         confirmRedeemPrize() {
             // show lightbox
@@ -38,10 +39,6 @@ export default {
             this.$router.push({
                 path: "/"
             });
-        },
-        updateQuantity() {
-            console.log("emit", this.$route.params.id);
-            this.$emit('updatePrize', this.$route.params.id);
         }
     },
     computed: {
